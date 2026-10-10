@@ -1,0 +1,6 @@
+{
+  "name": "Paper Sun — Vivek Palhal",
+  "description": "A sunlit 2D paper portfolio where the cursor is the sun, and every shadow tells a story about Vivek Palhal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

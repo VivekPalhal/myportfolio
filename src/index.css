@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --paper: #FFFDF8;
+    --cream: #FFF3E3;
+    --peach: #FFC999;
+    --orange: #FF6A00;
+    --orange-deep: #E24E00;
+    --amber: #FFA21F;
+    --ink: #1C1208;
+    --ink-soft: #7B6A58;
+
+    /* Sun position coordinates for global CSS calculations */
+    --sun-x: 50vw;
+    --sun-y: 100px;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.03em;
+  }
+}
+
+/* Custom scrollbar - warm flat paper style */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF3E3;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFC999;
+  border-radius: 4px;
+  border: 2px solid #FFF3E3;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6A00;
+}
+
+/* Hard sticker shadows (flat 2D cut paper depth) */
+.shadow-sticker {
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.shadow-sticker-lg {
+  box-shadow: 6px 6px 0 var(--ink);
+}
+.shadow-sticker-sm {
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.shadow-sticker-orange {
+  box-shadow: 5px 5px 0 var(--orange-deep);
+}
+.shadow-sticker-pressed {
+  box-shadow: 1px 1px 0 var(--ink);
+  transform: translate(3px, 3px);
+}
+
+/* Highlighter marker effect */
+.highlight-marker {
+  position: relative;
+  display: inline;
+}
+.highlight-marker::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  bottom: 1px;
+  height: 40%;
+  background-color: #FFC999;
+  z-index: -1;
+  transform: rotate(-0.5deg);
+  border-radius: 2px;
+}
+
+/* Subtle tactile paper texture */
+.bg-paper-grain {
+  background-image: radial-gradient(#1C1208 0.75px, transparent 0.75px);
+  background-size: 24px 24px;
+  background-color: #FFFDF8;
+}
+
+/* Paper plane flight animation */
+@keyframes planeFlight {
+  0% {
+    transform: translate(-50px, 0) rotate(15deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(115vw, -60px) rotate(-10deg);
+    opacity: 0;
+  }
+}
+.animate-planeFlight {
+  animation: planeFlight ease-in-out forwards;
+}
+
